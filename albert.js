@@ -139,11 +139,13 @@ function saveInput()
     var item = document.getElementById("inputItem").value;
     var quantity = document.getElementById("inputQuantity").value;
     var time = document.getElementById("inputTime").value;
-    
 
-    time = time.slice(0, -1);
-    
-    time = new Date(time).toUTCString();
+    console.log(time);
+    if (time.indexOf("Z") != -1)
+    {
+        time = time.split("Z").join("");
+    }
+    console.log(time);
 
     db.child("input").push({
         item: item,
