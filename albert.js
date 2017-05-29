@@ -145,7 +145,7 @@ function saveInput()
             time.slice(0, -1);
         }
     
-    time = new Date(time).valueOf();
+    time = new Date(time).toUTCString();
 
     db.child("input").push({
         item: item,
