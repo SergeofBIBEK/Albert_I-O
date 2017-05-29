@@ -5,6 +5,9 @@
 body 
 {
     background-color: #885d3a;
+    height: 100vh;
+    width: 100vw;
+    margin: 0px;
 }
 
 h1, div
