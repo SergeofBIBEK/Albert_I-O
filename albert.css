@@ -206,3 +206,8 @@ label
     left: -135px;
     top: -115px;
 }
+
+#centeringDiv 
+{
+    margin: 0px 50px;
+}
