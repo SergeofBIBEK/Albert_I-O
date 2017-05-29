@@ -26,7 +26,7 @@ function signedInHandler()
             //cells
             newHTML += "<div class='cell'>" + entry.val().item + "</div>";
             newHTML += "<div class='cell'>" + entry.val().quantity + " oz" + "</div>";
-            newHTML += "<div class='cell'>" + new Date(entry.val().time.replace(/-/g,'/').replace('T',' ')).toLocaleString() + "</div>";
+            newHTML += "<div class='cell'>" + new Date(entry.val().time.replace(/-/g,'/').replace('T',' ')).toString() + "</div>";
             newHTML += "<div class='cell'>" + 
                 "<input type='button' value='x' class='deleteButton' onclick='deleteEntry(\"input|" + entry.key + "\")'>" +
                 "</div>";
