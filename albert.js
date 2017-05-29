@@ -142,7 +142,7 @@ function saveInput()
     
     if (time.indexOf("Z") != -1)
         {
-            time.slice(0, -1);
+            time = time.slice(0, -1);
         }
     
     time = new Date(time).toUTCString();
