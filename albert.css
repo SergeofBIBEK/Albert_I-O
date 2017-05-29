@@ -117,9 +117,6 @@ input[type="image"]
 {
     background: linear-gradient(#008000, #00FF00);
     color: white;
-    position: fixed;
-    right: 0px;
-    bottom: 0px;
     border: 1px solid white;
     font-size: 30px;
     outline: none;
