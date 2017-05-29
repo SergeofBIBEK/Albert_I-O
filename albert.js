@@ -143,7 +143,7 @@ function saveInput()
     db.child("input").push({
         item: item,
         quantity: quantity,
-        time: time.valueOf()
+        time: time.toISOString();
     });
 
     closeModal();
