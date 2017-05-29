@@ -140,10 +140,8 @@ function saveInput()
     var quantity = document.getElementById("inputQuantity").value;
     var time = document.getElementById("inputTime").value;
     
-    if (time.indexOf("Z") != -1)
-        {
-            time = time.slice(0, -1);
-        }
+
+    time = time.slice(0, -1);
     
     time = new Date(time).toUTCString();
 
