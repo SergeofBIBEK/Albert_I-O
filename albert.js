@@ -24,7 +24,7 @@ function signedInHandler()
             newHTML += "<div class='row'>";
 
             var myArray = entry.val().time.split("T");
-            var prettyDate = new Date(myArray[0]).toDateString() + ", " + myArray[1].slice(0, 2) % 12 + myArray[1].slice(2, 8);
+            var prettyDate = new Date(myArray[0]).toDateString() + ", " + (myArray[1].slice(0, 2) % 12 || 12) + myArray[1].slice(2, 8);
             
             //cells
             newHTML += "<div class='cell'>" + entry.val().item + "</div>";
@@ -50,7 +50,7 @@ function signedInHandler()
             newHTML += "<div class='row'>";
 
             var myArray = entry.val().time.split("T");
-            var prettyDate = new Date(myArray[0]).toDateString() + ", " + myArray[1].slice(0, 2) % 12 + myArray[1].slice(2, 8);
+            var prettyDate = new Date(myArray[0]).toDateString() + ", " + (myArray[1].slice(0, 2) % 12 || 12) + myArray[1].slice(2, 8);
             
             //cells
             newHTML += "<div class='cell'>" + entry.val().item + "</div>";
@@ -77,7 +77,7 @@ function signedInHandler()
             newHTML += "<div class='row'>";
 
             var myArray = entry.val().time.split("T");
-            var prettyDate = new Date(myArray[0]).toDateString() + ", " + myArray[1].slice(0, 2) % 12 + myArray[1].slice(2, 8);
+            var prettyDate = new Date(myArray[0]).toDateString() + ", " + (myArray[1].slice(0, 2) % 12 || 12) + myArray[1].slice(2, 8);
             
             //cells
             newHTML += "<div class='cell'>" + entry.val().item + "</div>";
@@ -104,7 +104,7 @@ function signedInHandler()
             newHTML += "<div class='row'>";
 
             var myArray = entry.val().time.split("T");
-            var prettyDate = new Date(myArray[0]).toDateString() + ", " + myArray[1].slice(0, 2) % 12 + myArray[1].slice(2, 8);
+            var prettyDate = new Date(myArray[0]).toDateString() + ", " + (myArray[1].slice(0, 2) % 12 || 12) + myArray[1].slice(2, 8);
             
             //cells
             newHTML += "<div class='cell'>" + entry.val().item + "</div>";
