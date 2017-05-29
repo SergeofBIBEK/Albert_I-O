@@ -10,6 +10,7 @@ function dateStuff()
 function signedInHandler()
 {
     document.getElementById("firebaseui-auth-container").style.display = "none";
+    document.getElementById("signOutButton").removeAttribute("style");
 
     db = firebase.database().ref(currentUser.uid);
 

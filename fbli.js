@@ -1,6 +1,6 @@
 // FirebaseUI config.
 var uiConfig = {
-    signInSuccessUrl: '',
+    signInSuccessUrl: 'index.html',
     credentialHelper: firebaseui.auth.CredentialHelper.NONE,
     signInOptions: [
         // Leave the lines as is for the providers you want to offer your users.
@@ -8,7 +8,7 @@ var uiConfig = {
         /*firebase.auth.EmailAuthProvider.PROVIDER_ID*/
     ],
     // Terms of service url.
-    tosUrl: ''
+    tosUrl: 'index.html'
 };
 
 // Initialize the FirebaseUI Widget using Firebase.

@@ -29,6 +29,7 @@
     </head>
     <body>
 
+        <img src="monkey.png" id="monkey">
         <div id="siteContainer">
             <div id="centeringDiv">
                 <img src="Title.png"><br>
@@ -88,6 +89,7 @@
                 </div>
             </div>
             <div id='firebaseui-auth-container'></div>
+            <input id="signOutButton" type="button" class="modalClose" value="Logout" onclick="firebase.auth().signOut().then(function(){location.reload();});" style="display: none;">
 
         </div>
 
