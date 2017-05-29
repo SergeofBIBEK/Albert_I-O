@@ -24,12 +24,12 @@ function signedInHandler()
             newHTML += "<div class='row'>";
 
             var date = new Date(entry.val().time);
-            var prettyDate = date.toDateString() + ", " + (date.getHours() % 12 || 12) + date.toTimeString().slice(0, -14).slice(2,-1);
+            var prettyDate = date.toDateString() + ", " + (date.toTimeString().slice(0, 2) % 12 || 12) + date.toTimeString().slice(0, -14).slice(2,-1);
             
             //cells
             newHTML += "<div class='cell'>" + entry.val().item + "</div>";
             newHTML += "<div class='cell'>" + entry.val().quantity + " oz" + "</div>";
-            newHTML += "<div class='cell'>" + date.toTimeString() + "</div>";
+            newHTML += "<div class='cell'>" + prettyDate + "</div>";
             newHTML += "<div class='cell'>" + 
                 "<input type='button' value='x' class='deleteButton' onclick='deleteEntry(\"input|" + entry.key + "\")'>" +
                 "</div>";
