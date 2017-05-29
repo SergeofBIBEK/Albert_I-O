@@ -5,9 +5,6 @@
 body 
 {
     background-color: #885d3a;
-/*    height: 100vh;
-    width: 100vw;*/
-    margin: 0px;
 }
 
 h1, div
@@ -68,7 +65,6 @@ input[type="image"]
     align-items: center;
     justify-content: center;
     flex-wrap: wrap;
-    width: 100vw;
 }
 
 .modal > *
