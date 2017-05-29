@@ -5,8 +5,8 @@
 body 
 {
     background-color: #885d3a;
-    height: 100vh;
-    width: 100vw;
+/*    height: 100vh;
+    width: 100vw;*/
     margin: 0px;
 }
 
@@ -68,6 +68,7 @@ input[type="image"]
     align-items: center;
     justify-content: center;
     flex-wrap: wrap;
+    width: 100vw;
 }
 
 .modal > *
@@ -205,9 +206,4 @@ label
     transform: scale(0.5);
     left: -135px;
     top: -115px;
-}
-
-#centeringDiv 
-{
-    margin: 0px 50px;
 }
