@@ -14,7 +14,7 @@ function signedInHandler()
 
     db = firebase.database().ref(currentUser.uid);
 
-    db.child("input").orderByChild("time").limitToLast(5).on('value', function(snapshot){
+    db.child("input").orderByChild("time").limitToLast(10).on('value', function(snapshot){
         //firstRow
 
         var newHTML = "<div class='row'><div class='cell'>Item</div><div class='cell'>Amount</div><div class='cell'>Time</div><div class='cell'>Delete</div></div>";
@@ -40,7 +40,7 @@ function signedInHandler()
         document.getElementById("inputTable").innerHTML = newHTML;
     });
 
-    db.child("output").orderByChild("time").limitToLast(5).on('value', function(snapshot){
+    db.child("output").orderByChild("time").limitToLast(10).on('value', function(snapshot){
         //firstRow
 
         var newHTML = "<div class='row'><div class='cell'>Item</div><div class='cell'>Amount</div><div class='cell'>Time</div><div class='cell'>Delete</div></div>";
