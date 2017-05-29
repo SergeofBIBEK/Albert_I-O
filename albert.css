@@ -1,0 +1,181 @@
+*
+{
+    -webkit-appearance: none;
+}
+body 
+{
+    background-color: #885d3a;
+}
+
+h1, div
+{
+    text-align: center;
+}
+
+h1
+{
+    color: #fff186;
+}
+
+input, select, label
+{
+    font-size: 1.5em;
+    outline: none;
+    border-radius: 30px;
+    text-align: center;
+    transition: all 1s;
+}
+
+input:hover, select:hover, label:hover
+{
+    transform: scale(0.8);
+    transition: all 1s;
+}
+
+label
+{
+    background-color: white;
+}
+
+input[type="image"] 
+{
+    height: 150px;
+}
+
+.modal
+{
+    position: absolute;
+    width: 100vw;
+    background-color: rgba(0,0,0,0.5);
+    z-index: 10;
+    top: 0px;
+    left: 0px;
+    margin: 0px;
+    padding: 0px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-wrap: wrap;
+    flex-direction: column;
+}
+
+#siteContainer
+{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-wrap: wrap;
+}
+
+.modal > *
+{
+    margin: 5px;
+}
+
+.table
+{
+    display: table;
+    border: 1px solid black;
+    font-size: 1.5em;
+}
+
+.row
+{
+    display: table-row;
+    border: 1px solid black;
+}
+
+.cell
+{
+    display: table-cell;
+    border: 1px solid black;
+    padding: 5px;
+    background-color: #6b4220;
+    color: #ffe200;
+}
+
+.modalClose 
+{
+    position: fixed;
+    right: 0px;
+    top: 0px;
+    background: linear-gradient(#ff0000, #b10b0b);
+    color: white;
+    border: 1px solid white;
+    font-size: 30px;
+    outline: none;
+}
+
+.modalClose:hover, .deleteButton:hover
+{
+    background: linear-gradient(#b10b0b, #FF0000);
+}
+
+.saveButton 
+{
+    background: linear-gradient(#008000, #00FF00);
+    color: white;
+    position: fixed;
+    right: 0px;
+    bottom: 0px;
+    border: 1px solid white;
+    font-size: 30px;
+    outline: none;
+}
+
+.saveButton:hover
+{
+    background: linear-gradient(#00FF00, #008000);
+}
+
+.deleteButton 
+{
+    border: 1px solid white;
+    outline: none;
+    background: linear-gradient(#ff0000, #b10b0b);
+    color: white;
+    font-size: 20px;
+}
+
+.viewAllButton
+{
+    background: linear-gradient(#fff186, #ffe200);
+    border: 1px solid black;
+    outline: none;
+    margin-bottom: 5px;
+}
+
+.viewAllButton:hover
+{
+    background: linear-gradient(#FFE200, #fff186);
+}
+
+#inputModal, #outputModal
+{
+    height: 100vh;
+}
+
+.modal > select 
+{
+    background: linear-gradient(#6b4220, #4e2f16);
+    border: 1px solid #ffe200;
+    color: #ffe200;
+    padding: 12px;
+}
+
+input[type="datetime-local"], label, input[type="number"]
+{
+    background: linear-gradient(#6b4220, #4e2f16);
+    border: 1px solid #ffe200;
+    color: #ffe200;
+}
+
+input[type="datetime-local"]:hover, label:hover, input[type="number"]:hover, .modal > select:hover
+{
+    background: linear-gradient(#4e2f16, #6b4220);
+}
+
+label
+{
+    padding: 10px;
+}

@@ -1,0 +1,186 @@
+<html>
+    <head>
+
+        <!--Calendar-->
+
+
+        <!--Firebase-->
+        <script src="https://www.gstatic.com/firebasejs/4.0.0/firebase.js"></script>
+        <script>
+            // Initialize Firebase
+            var config = {
+                apiKey: "AIzaSyDt_4BjwPWV4HzNtEzZTZZNeh9L4dOJ3No",
+                authDomain: "albert-i-o.firebaseapp.com",
+                databaseURL: "https://albert-i-o.firebaseio.com",
+                projectId: "albert-i-o",
+                storageBucket: "albert-i-o.appspot.com",
+                messagingSenderId: "1037103511784"
+            };
+            firebase.initializeApp(config);
+        </script>
+
+        <script src="https://cdn.firebase.com/libs/firebaseui/1.0.1/firebaseui.js"></script>
+        <link type="text/css" rel="stylesheet" href="https://cdn.firebase.com/libs/firebaseui/1.0.1/firebaseui.css" />
+
+        <script type="text/javascript" src="fbli.js"></script>
+
+        <!--Local Files-->
+        <script type="text/javascript" src="albert.js"></script>
+        <link type="text/css" rel="stylesheet" href="albert.css">
+
+    </head>
+    <body>
+
+        <div id="siteContainer">
+            <div id="centeringDiv">
+                <img src="Title.png"><br>
+                <input type="image" src="banana.png" id="inputButton" value="New Input" onclick="showInput();">
+                <input type="image" src="poop.png" id="outputButton" value="New Output" onclick="showOutput();">
+
+                <h1>Input Table</h1><input class="viewAllButton" type="button" value="View All" onclick="showFullInput();">
+                <div class="table" id="inputTable">
+                    <div class="row">
+                        <div class="cell">
+                            Item
+                        </div>
+                        <div class="cell">
+                            Amount
+                        </div>
+                        <div class="cell">
+                            Time
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="cell">
+                            Loading...
+                        </div>
+                        <div class="cell">
+                            Loading...
+                        </div>
+                        <div class="cell">
+                            Loading...
+                        </div>
+                    </div>
+                </div>
+
+                <h1>Output Table</h1><input class="viewAllButton" type="button" value="View All" onclick="showFullOutput();">
+                <div class="table" id="outputTable">
+                    <div class="row">
+                        <div class="cell">
+                            Item
+                        </div>
+                        <div class="cell">
+                            Amount
+                        </div>
+                        <div class="cell">
+                            Time
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="cell">
+                            Loading...
+                        </div>
+                        <div class="cell">
+                            Loading...
+                        </div>
+                        <div class="cell">
+                            Loading...
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div id='firebaseui-auth-container'></div>
+
+        </div>
+
+        <div id="fullInput" class="modal" style="display: none;">
+            <input type="button" class="modalClose" value="Close" onclick="closeModal()">
+            <div class="table" id="inputTableFull">
+                <div class="row">
+                    <div class="cell">
+                        Item
+                    </div>
+                    <div class="cell">
+                        Amount
+                    </div>
+                    <div class="cell">
+                        Time
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="cell">
+                        Loading...
+                    </div>
+                    <div class="cell">
+                        Loading...
+                    </div>
+                    <div class="cell">
+                        Loading...
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div id="fullOutput" class="modal" style="display: none;">
+            <input type="button" class="modalClose" value="Close" onclick="closeModal()">
+            <div class="table" id="outputTableFull">
+                <div class="row">
+                    <div class="cell">
+                        Item
+                    </div>
+                    <div class="cell">
+                        Amount
+                    </div>
+                    <div class="cell">
+                        Time
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="cell">
+                        Loading...
+                    </div>
+                    <div class="cell">
+                        Loading...
+                    </div>
+                    <div class="cell">
+                        Loading...
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div id="inputModal" class="modal" style="display:none;">
+            <input type="button" class="modalClose" value="Cancel" onclick="closeModal()">
+            <select id="inputItem">
+                <option value="Formula">Formula</option>
+                <option value="Milk">Milk</option>
+                <option value="Rice Cereal">Rice Cereal</option>
+                <option value="Vegetable">Vegetable</option>
+                <option value="Fruit">Fruit</option>
+                <option value="Other">Other</option>
+            </select>
+            <label>Amount: <input type="number" value="5" id="inputQuantity"></label>
+            <input type="datetime-local" id="inputTime">
+            <input type="button" class="saveButton" value="Save" onclick="saveInput();">
+        </div>
+
+        <div id="outputModal" class="modal" style="display:none;">
+            <input type="button" class="modalClose" value="Cancel" onclick="closeModal()">
+            <select id="outputItem">
+                <option value="Pee">Pee</option>
+                <option value="Poop">Poop</option>
+                <option value="Vomit">Vomit</option>
+            </select>
+            <select id="outputQuantity">
+                <option value="Small">Small</option>
+                <option value="Medium">Medium</option>
+                <option value="Large">Large</option>
+            </select>
+            <input type="datetime-local" id="outputTime">
+            <input type="button" class="saveButton" value="Save" onclick="saveOutput();">
+        </div>
+
+
+    </body>
+
+</html>
