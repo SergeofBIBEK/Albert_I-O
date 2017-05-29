@@ -30,7 +30,6 @@ function signedInHandler()
             newHTML += "<div class='cell'>" + 
                 "<input type='button' value='x' class='deleteButton' onclick='deleteEntry(\"input|" + entry.key + "\")'>" +
                 "</div>";
-
             //endRow
             newHTML += "</div>";
         });
@@ -139,12 +138,12 @@ function saveInput()
 {
     var item = document.getElementById("inputItem").value;
     var quantity = document.getElementById("inputQuantity").value;
-    var time = document.getElementById("inputTime").value;
+    var time = new Date(document.getElementById("inputTime").value);
 
     db.child("input").push({
         item: item,
         quantity: quantity,
-        time: time
+        time: time.valueOf()
     });
 
     closeModal();
