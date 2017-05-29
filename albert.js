@@ -60,7 +60,7 @@ function signedInHandler()
 
         document.getElementById("outputTable").innerHTML = newHTML;
     });
-    
+
     db.child("input").orderByChild("time").on('value', function(snapshot){
         //firstRow
 
@@ -108,7 +108,7 @@ function signedInHandler()
 
         document.getElementById("outputTableFull").innerHTML = newHTML;
     });
-    
+
 }
 
 function signedOutHandler()
@@ -119,7 +119,7 @@ function signedOutHandler()
 function showInput()
 {
     document.getElementById("inputModal").removeAttribute("style");
-        document.getElementById("inputTable").style.display = "none";
+    document.getElementById("inputTable").style.display = "none";
     document.getElementById("outputTable").style.display = "none";
     var currentTime = new Date();
     document.getElementById("inputTime").value = currentTime.getFullYear()+"-"+zeroPadded(currentTime.getMonth() + 1)+"-"+zeroPadded(currentTime.getDate())+"T"+zeroPadded(currentTime.getHours())+":"+zeroPadded(currentTime.getMinutes())+":"+zeroPadded(currentTime.getSeconds());
@@ -128,7 +128,7 @@ function showInput()
 function showOutput()
 {
     document.getElementById("outputModal").removeAttribute("style");
-        document.getElementById("inputTable").style.display = "none";
+    document.getElementById("inputTable").style.display = "none";
     document.getElementById("outputTable").style.display = "none";
     var currentTime = new Date();
     document.getElementById("outputTime").value = currentTime.getFullYear()+"-"+zeroPadded(currentTime.getMonth() + 1)+"-"+zeroPadded(currentTime.getDate())+"T"+zeroPadded(currentTime.getHours())+":"+zeroPadded(currentTime.getMinutes())+":"+zeroPadded(currentTime.getSeconds());
@@ -138,12 +138,19 @@ function saveInput()
 {
     var item = document.getElementById("inputItem").value;
     var quantity = document.getElementById("inputQuantity").value;
-    var time = new Date(document.getElementById("inputTime").value);
+    var time = document.getElementById("inputTime").value;
+    
+    if (time.indexOf("Z") != -1)
+        {
+            time.slice(0, -1);
+        }
+    
+    time = new Date(time).valueOf();
 
     db.child("input").push({
         item: item,
         quantity: quantity,
-        time: time.toUTCString()
+        time: time
     });
 
     closeModal();
@@ -172,7 +179,7 @@ function closeModal()
     {
         modals[i].style.display = "none";
     }
-        document.getElementById("inputTable").removeAttribute("style");
+    document.getElementById("inputTable").removeAttribute("style");
     document.getElementById("outputTable").removeAttribute("style");
 }
 
@@ -191,7 +198,7 @@ function showFullInput()
 function showFullOutput()
 {
     document.getElementById("fullOutput").removeAttribute("style");
-        document.getElementById("inputTable").style.display = "none";
+    document.getElementById("inputTable").style.display = "none";
     document.getElementById("outputTable").style.display = "none";
 }
 
