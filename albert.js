@@ -73,7 +73,7 @@ function signedInHandler()
 
                 //cells
                 newHTML += "<div class='cell'>" + entry.val().item + "</div>";
-                newHTML += "<div class='cell'>" + entry.val().quantity + " oz" + "</div>";
+                newHTML += "<div class='cell'>" + entry.val().quantity + "</div>";
                 newHTML += "<div class='cell'>" + prettyDate + "</div>";
                 newHTML += "<div class='cell'>" + 
                     "<input type='button' value='x' class='deleteButton' onclick='deleteEntry(\"input|" + entry.key + "\")'>" +
@@ -137,7 +137,7 @@ function signedInHandler()
 
                 //cells
                 newHTML += "<div class='cell'>" + entry.val().item + "</div>";
-                newHTML += "<div class='cell'>" + entry.val().quantity + " oz" + "</div>";
+                newHTML += "<div class='cell'>" + entry.val().quantity + "</div>";
                 newHTML += "<div class='cell'>" + prettyDate + "</div>";
                 newHTML += "<div class='cell'>" + 
                     "<input type='button' value='x' class='deleteButton' onclick='deleteEntry(\"input|" + entry.key + "\")'>" +
