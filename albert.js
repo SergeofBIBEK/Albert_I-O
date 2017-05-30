@@ -20,21 +20,31 @@ function signedInHandler()
         var newHTML = "<div class='row'><div class='cell'>Item</div><div class='cell'>Amount</div><div class='cell'>Time</div><div class='cell'>Delete</div></div>";
 
         snapshot.forEach(function(entry){
-            //newRow
-            newHTML += "<div class='row'>";
-
             var myArray = entry.val().time.split("T");
-            var prettyDate = new Date(myArray[0]).toDateString() + ", " + (myArray[1].slice(0, 2) % 12 || 12) + myArray[1].slice(2, 8);
-            
-            //cells
-            newHTML += "<div class='cell'>" + entry.val().item + "</div>";
-            newHTML += "<div class='cell'>" + entry.val().quantity + " oz" + "</div>";
-            newHTML += "<div class='cell'>" + prettyDate + "</div>";
-            newHTML += "<div class='cell'>" + 
-                "<input type='button' value='x' class='deleteButton' onclick='deleteEntry(\"input|" + entry.key + "\")'>" +
-                "</div>";
-            //endRow
-            newHTML += "</div>";
+            var currentDate = new Date().toDateString();
+            var itemDate = new Date(myArray[0].replace(/([0-9]{4})-([0-9]{2})-([0-9]{2})/, "$2/$3/$1")).toDateString();
+                        
+            if (currentDate == itemDate)
+            {
+
+                var hours = myArray[1].slice(0, 2);
+                var ampm = hours >= 12 ? "PM" : "AM";
+                
+                //newRow
+                newHTML += "<div class='row'>";
+
+                var prettyDate = itemDate + ", " + (hours % 12 || 12) + myArray[1].slice(2, 5) + " " + ampm;
+
+                //cells
+                newHTML += "<div class='cell'>" + entry.val().item + "</div>";
+                newHTML += "<div class='cell'>" + entry.val().quantity + " oz" + "</div>";
+                newHTML += "<div class='cell'>" + prettyDate + "</div>";
+                newHTML += "<div class='cell'>" + 
+                    "<input type='button' value='x' class='deleteButton' onclick='deleteEntry(\"input|" + entry.key + "\")'>" +
+                    "</div>";
+                //endRow
+                newHTML += "</div>";
+            }
         });
 
         document.getElementById("inputTable").innerHTML = newHTML;
@@ -46,22 +56,31 @@ function signedInHandler()
         var newHTML = "<div class='row'><div class='cell'>Item</div><div class='cell'>Amount</div><div class='cell'>Time</div><div class='cell'>Delete</div></div>";
 
         snapshot.forEach(function(entry){
-            //newRow
-            newHTML += "<div class='row'>";
-
             var myArray = entry.val().time.split("T");
-            var prettyDate = new Date(myArray[0]).toDateString() + ", " + (myArray[1].slice(0, 2) % 12 || 12) + myArray[1].slice(2, 8);
-            
-            //cells
-            newHTML += "<div class='cell'>" + entry.val().item + "</div>";
-            newHTML += "<div class='cell'>" + entry.val().quantity + "</div>";
-            newHTML += "<div class='cell'>" + prettyDate + "</div>";
-            newHTML += "<div class='cell'>" + 
-                "<input type='button' value='x' class='deleteButton' onclick='deleteEntry(\"output|" + entry.key + "\")'>" +
-                "</div>";
+            var currentDate = new Date().toDateString();
+            var itemDate = new Date(myArray[0].replace(/([0-9]{4})-([0-9]{2})-([0-9]{2})/, "$2/$3/$1")).toDateString();
+                        
+            if (currentDate == itemDate)
+            {
 
-            //endRow
-            newHTML += "</div>";
+                var hours = myArray[1].slice(0, 2);
+                var ampm = hours >= 12 ? "PM" : "AM";
+                
+                //newRow
+                newHTML += "<div class='row'>";
+
+                var prettyDate = itemDate + ", " + (hours % 12 || 12) + myArray[1].slice(2, 5) + " " + ampm;
+
+                //cells
+                newHTML += "<div class='cell'>" + entry.val().item + "</div>";
+                newHTML += "<div class='cell'>" + entry.val().quantity + " oz" + "</div>";
+                newHTML += "<div class='cell'>" + prettyDate + "</div>";
+                newHTML += "<div class='cell'>" + 
+                    "<input type='button' value='x' class='deleteButton' onclick='deleteEntry(\"input|" + entry.key + "\")'>" +
+                    "</div>";
+                //endRow
+                newHTML += "</div>";
+            }
         });
 
         document.getElementById("outputTable").innerHTML = newHTML;
@@ -73,22 +92,26 @@ function signedInHandler()
         var newHTML = "<div class='row'><div class='cell'>Item</div><div class='cell'>Amount</div><div class='cell'>Time</div><div class='cell'>Delete</div></div>";
 
         snapshot.forEach(function(entry){
-            //newRow
-            newHTML += "<div class='row'>";
-
             var myArray = entry.val().time.split("T");
-            var prettyDate = new Date(myArray[0]).toDateString() + ", " + (myArray[1].slice(0, 2) % 12 || 12) + myArray[1].slice(2, 8);
-            
-            //cells
-            newHTML += "<div class='cell'>" + entry.val().item + "</div>";
-            newHTML += "<div class='cell'>" + entry.val().quantity + " oz" + "</div>";
-            newHTML += "<div class='cell'>" + prettyDate + "</div>";
-            newHTML += "<div class='cell'>" + 
-                "<input type='button' value='x' class='deleteButton' onclick='deleteEntry(\"input|" + entry.key + "\")'>" +
-                "</div>";
+            var itemDate = new Date(myArray[0].replace(/([0-9]{4})-([0-9]{2})-([0-9]{2})/, "$2/$3/$1")).toDateString();
+                        
+                var hours = myArray[1].slice(0, 2);
+                var ampm = hours >= 12 ? "PM" : "AM";
+                
+                //newRow
+                newHTML += "<div class='row'>";
 
-            //endRow
-            newHTML += "</div>";
+                var prettyDate = itemDate + ", " + (hours % 12 || 12) + myArray[1].slice(2, 5) + " " + ampm;
+
+                //cells
+                newHTML += "<div class='cell'>" + entry.val().item + "</div>";
+                newHTML += "<div class='cell'>" + entry.val().quantity + " oz" + "</div>";
+                newHTML += "<div class='cell'>" + prettyDate + "</div>";
+                newHTML += "<div class='cell'>" + 
+                    "<input type='button' value='x' class='deleteButton' onclick='deleteEntry(\"input|" + entry.key + "\")'>" +
+                    "</div>";
+                //endRow
+                newHTML += "</div>";
         });
 
         document.getElementById("inputTableFull").innerHTML = newHTML;
@@ -100,22 +123,27 @@ function signedInHandler()
         var newHTML = "<div class='row'><div class='cell'>Item</div><div class='cell'>Amount</div><div class='cell'>Time</div><div class='cell'>Delete</div></div>";
 
         snapshot.forEach(function(entry){
-            //newRow
-            newHTML += "<div class='row'>";
-
             var myArray = entry.val().time.split("T");
-            var prettyDate = new Date(myArray[0]).toDateString() + ", " + (myArray[1].slice(0, 2) % 12 || 12) + myArray[1].slice(2, 8);
-            
-            //cells
-            newHTML += "<div class='cell'>" + entry.val().item + "</div>";
-            newHTML += "<div class='cell'>" + entry.val().quantity + "</div>";
-            newHTML += "<div class='cell'>" + prettyDate + "</div>";
-            newHTML += "<div class='cell'>" + 
-                "<input type='button' value='x' class='deleteButton' onclick='deleteEntry(\"output|" + entry.key + "\")'>" +
-                "</div>";
+            var itemDate = new Date(myArray[0].replace(/([0-9]{4})-([0-9]{2})-([0-9]{2})/, "$2/$3/$1")).toDateString();
+                        
 
-            //endRow
-            newHTML += "</div>";
+                var hours = myArray[1].slice(0, 2);
+                var ampm = hours >= 12 ? "PM" : "AM";
+                
+                //newRow
+                newHTML += "<div class='row'>";
+
+                var prettyDate = itemDate + ", " + (hours % 12 || 12) + myArray[1].slice(2, 5) + " " + ampm;
+
+                //cells
+                newHTML += "<div class='cell'>" + entry.val().item + "</div>";
+                newHTML += "<div class='cell'>" + entry.val().quantity + " oz" + "</div>";
+                newHTML += "<div class='cell'>" + prettyDate + "</div>";
+                newHTML += "<div class='cell'>" + 
+                    "<input type='button' value='x' class='deleteButton' onclick='deleteEntry(\"input|" + entry.key + "\")'>" +
+                    "</div>";
+                //endRow
+                newHTML += "</div>";
         });
 
         document.getElementById("outputTableFull").innerHTML = newHTML;
