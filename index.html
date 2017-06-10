@@ -82,7 +82,7 @@
                     </div>
                 </div>
 
-                <h1>Output Table</h1><input class="viewAllButton" type="button" value="View All" onclick="showFullOutput();">
+                <h1>Output Table</h1><input class="viewAllButton" type="button" value="View All" onclick="showFullOutput();"><input class="viewAllButton" type="button" value="View #2" onclick="showNumber2Output();">
                 <div class="table" id="outputTable">
                     <div class="row">
                         <div class="cell">
@@ -144,6 +144,34 @@
         <div id="fullOutput" class="modal" style="display: none;">
             <input type="button" class="modalClose" value="Close" onclick="closeModal()">
             <div class="table" id="outputTableFull">
+                <div class="row">
+                    <div class="cell">
+                        Item
+                    </div>
+                    <div class="cell">
+                        Amount
+                    </div>
+                    <div class="cell">
+                        Time
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="cell">
+                        Loading...
+                    </div>
+                    <div class="cell">
+                        Loading...
+                    </div>
+                    <div class="cell">
+                        Loading...
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div id="number2Output" class="modal" style="display: none;">
+            <input type="button" class="modalClose" value="Close" onclick="closeModal()">
+            <div class="table" id="outputTableNumber2">
                 <div class="row">
                     <div class="cell">
                         Item
