@@ -261,7 +261,11 @@ function closeModal()
 
 function deleteEntry(data)
 {
-    db.child(data.split("|")[0]).child(data.split("|")[1]).remove();
+    var confirmation = confirm("Are you sure you want to delete?");
+    if (confirmation)
+    {
+        db.child(data.split("|")[0]).child(data.split("|")[1]).remove();
+    }
 }
 
 function showFullInput()
